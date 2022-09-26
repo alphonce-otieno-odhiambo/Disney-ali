@@ -1,12 +1,12 @@
 import Image from 'next/image'
 import React from 'react'
 import {
-    HomeIcon,
-    UserIcon,
-    MenuIcon,
-    BriefcaseIcon,
-    AnnotationIcon
-} from '@heroicons/react/solid'
+  HomeIcon,
+  SearchIcon,
+  PlusIcon,
+  StarIcon,
+} from "@heroicons/react/solid";
+
 function Header() {
   return (
     <div className='sticky bg-[#040714] top-0 z-[1000] flex 
@@ -16,13 +16,33 @@ function Header() {
         width={80}
         height={80}
         />
-        <div>
-            <a className='header-link group'>
-                <HomeIcon className="h-6"/>
-                <span className='span'>Home</span>
-            </a>
+        <div className='hidden ml-10 md:flex items-center space-x-6'>
+        <a className="header-link group">
+            <HomeIcon className="h-4" />
+            <span className="span">Home</span>
+          </a>
+          <a className="header-link group">
+            <SearchIcon className="h-4" />
+            <span className="span">Search</span>
+          </a>
+          <a className="header-link group">
+            <PlusIcon className="h-4" />
+            <span className="span">Watchlist</span>
+          </a>
+          <a className="header-link group">
+            <StarIcon className="h-4" />
+            <span className="span">Originals</span>
+          </a>
+          <a className="header-link group">
+            <img src="images/images/movie-icon.svg" alt="" className="h-5" />
+            <span className="span">Movies</span>
+          </a>
+          <a className="header-link group">
+            <img src="images/images/series-icon.svg" alt="" className="h-5" />
+            <span className="span">Series</span>
+          </a>
         </div>
-        
+        <button className='ml-auto uppercase border px-4 py-1.5 rounded font-normal tracking-wide hover:bg-white hover:text-black transition duration-200'>Login</button>
     </div>
   )
 }

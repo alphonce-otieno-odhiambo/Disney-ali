@@ -58,7 +58,7 @@ Incase of any ideas,suggestions or complaints feel free to connect with me on od
 
 ### License
 MIT
-Copyright (c) 2021 **IG.C**
+Copyright (c) 2022 **Disney-ali**
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:

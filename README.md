@@ -18,6 +18,47 @@ You can start editing the page by modifying `pages/index.js`. The page auto-upda
 
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
+
+# BET-AWARDS-RESUB
+### 28/10/2022
+## Author
+[Alphonce Otieno](https://github.com/alphonce-otieno-odhiambo)
+
+## Live Link
+<!-- https://instaali.herokuapp.com// -->
+
+## Description
+As a user of the application I should be able to:
+1. Sign in to the application through github to start using.
+2. View differect set of movies
+3. Select a specific movie id and view details
+4. play trailers of a specific movies
+5. LogOut after app usage
+
+## Setup/Installation Requirements
+To get the code..
+1. Cloning the repository:
+  ```bash
+  git clone https://github.com/alphonce-otieno-odhiambo/Disney-ali.git
+  ```
+
+## Known Bugs
+not for now bt incase of any,willl communicate
+## Technologies Used
+ * JavaScript
+    * Next-auth
+    * Vercel
+    * Next js | react
+    * The Movie Database API
+    * Firebase
+
+## Support and contact details
+Incase of any contributions fork the repo and make any substantial changes.
+Incase of any ideas,suggestions or complaints feel free to connect with me on odhiamboalphonce23@gmail.com
+
+### License
+MIT
+Copyright (c) 2021 **IG.C**
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:

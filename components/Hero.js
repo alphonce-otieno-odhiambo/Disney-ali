@@ -2,9 +2,9 @@
 
 import Head from "next/head";
 import Image from "next/image";
-import { signIn } from "next-auth/react"
+import { useRouter } from "next/router";
 function Hero() {
-
+const router = useRouter()
   return (
     <section className="relative">
       <Head>
@@ -27,13 +27,13 @@ function Hero() {
             objectFit="contain"
           />
           <button 
-          onClick={signIn}
+          onClick={() => router.push('auth/signin')}
           className="bg-blue-600 uppercase text-xl tracking-wide font-extrabold py-4 px-6 w-full rounded hover:bg-[#0485ee]">
             Get all there
           </button>
           <p className="text-xs text-center ">
             Get Premier Access to Raya and the Last Dragon for an additional fee
-            with a Disney+ subscription. As of 03/26/21, the price of Disney+
+            with a Disney+ subscription. As of 02/26/23, the price of Disney+
             and The Disney Bundle will increase by $
           </p>
           <Image

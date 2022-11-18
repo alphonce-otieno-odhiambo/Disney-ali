@@ -6,14 +6,25 @@ import {
   PlusIcon,
   StarIcon,
 } from "@heroicons/react/solid";
-import { useSession, signIn, signOut } from 'next-auth/react';
+// import { useSession, signIn, signOut } from 'next-auth/react';
 import { useRouter } from "next/router";
+import { useAuth } from '../contextApi/userAuth'
 
 function Header() {
-  const {data: session} = useSession();
-  
+  // const {data: session} = useSession();
+  const { logout } = useAuth();
+  const { user } = useAuth();
   // console.log(session)
   const router  =  useRouter()
+  const hundleLogout = () => {
+    
+    if(!user){
+      router.push('auth/signin')
+
+    }else{
+      return logout()
+    }
+  }
   
   return (
     
@@ -26,7 +37,7 @@ function Header() {
         height={80}
         className="cursor-pointer"
         />
-        {session ? (
+        {user ? (
           <>
             <div className='hidden ml-10 md:flex items-center space-x-6'>
         <a className="header-link group">
@@ -54,18 +65,10 @@ function Header() {
             <span className="span">Series</span>
           </a>
         </div>
-        <img
-        onClick={signOut}
-        src={session.user.image} alt=''
-        layout='fill'
-        objectFit='cover'
-        height={40}
-        width={40}
-        className="rounded-full  border-r-slate-100 ml-auto boder-r-4 hover:cursor-pointer"
-        />
+        <button onClick={hundleLogout} className='ml-auto uppercase border px-4 py-1.5 rounded font-normal tracking-wide hover:bg-white hover:text-black transition duration-200'>Logout</button>
           </>
         ) : (
-          <button onClick={signIn} className='ml-auto uppercase border px-4 py-1.5 rounded font-normal tracking-wide hover:bg-white hover:text-black transition duration-200'>Login</button>
+          <button onClick={() => router.push('auth/signin')} className='ml-auto uppercase border px-4 py-1.5 rounded font-normal tracking-wide hover:bg-white hover:text-black transition duration-200'>Login</button>
         )}
         
         

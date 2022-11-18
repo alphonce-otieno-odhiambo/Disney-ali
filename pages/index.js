@@ -7,14 +7,17 @@ import MoviesCollection from '../components/MoviesCollection'
 import ShowsCollection from '../components/ShowsCollection'
 import Slider from '../components/Slider'
 import {useSession} from "next-auth/react" 
+import { useAuth } from '../contextApi/userAuth'
 
 export default function Home({
   popularMovies, popularShows, top_ratedMovies,top_ratedShows
 }){
 
-  const {data: session} = useSession()
+  const { user } = useAuth();
 
-  // console.log(top_ratedMovies)
+  // const {data: session} = useSession()
+
+  console.log(user)
   return (
     <div >
       <Head>
@@ -24,12 +27,12 @@ export default function Home({
       </Head>
 
      <Header/>
-     {session ? (
+     {user ? (
        <section className='relative min-h-screen after:bg-home after:bg-center after:bg-cover after:bg-no-repeat after:bg-fixed after:absolute after:inset-0 after:z-[-1]'>
        <Slider/>
        <Brands/>
        <MoviesCollection 
-       results={popularMovies} title='Popula Movies'
+       results={popularMovies} title='Popular Movies'
        />
         <MoviesCollection 
        results={top_ratedMovies} title='top_rated Movies'
@@ -37,9 +40,9 @@ export default function Home({
        <ShowsCollection results={popularShows} title='Popular Shows' />
        <ShowsCollection results={top_ratedShows} title='top_rated Shows' />
       </section>
-     ) : (
+      ) : (
       <Hero/>
-     )}
+     )} 
    
      
     </div>

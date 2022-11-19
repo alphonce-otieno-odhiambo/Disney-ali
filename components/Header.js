@@ -68,7 +68,7 @@ function Header() {
         <button onClick={hundleLogout} className='ml-auto uppercase border px-4 py-1.5 rounded font-normal tracking-wide hover:bg-white hover:text-black transition duration-200'>Logout</button>
           </>
         ) : (
-          <button onClick={() => router.push('auth/signin')} className='ml-auto uppercase border px-4 py-1.5 rounded font-normal tracking-wide hover:bg-white hover:text-black transition duration-200'>Login</button>
+          <button onClick={() => router.push('/signin')} className='ml-auto uppercase border px-4 py-1.5 rounded font-normal tracking-wide hover:bg-white hover:text-black transition duration-200'>Login</button>
         )}
         
         

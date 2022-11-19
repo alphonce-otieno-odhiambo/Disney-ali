@@ -27,7 +27,7 @@ const router = useRouter()
             objectFit="contain"
           />
           <button 
-          onClick={() => router.push('auth/signin')}
+          onClick={() => router.push('/signin')}
           className="bg-blue-600 uppercase text-xl tracking-wide font-extrabold py-4 px-6 w-full rounded hover:bg-[#0485ee]">
             Get all there
           </button>
